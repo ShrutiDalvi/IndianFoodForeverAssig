@@ -1,12 +1,12 @@
 RORAssignment::Application.routes.draw do
-  get "recipies/show"
-
-  get "recipies/list"
-
-  get "categories/index"
-
-  get "categories/list"
-
+    resource :recipes
+    resource :categories
+    match 'categories/:id' => 'categories#list'
+    match 'recipes/list' => 'recipes#list'
+    match 'recipes/:id' => 'recipes#show'
+  resources :recipes do
+      resources :comments
+    end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,7 +56,7 @@ RORAssignment::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'categories#index'
 
   # See how all your routes lay out with "rake routes"
 

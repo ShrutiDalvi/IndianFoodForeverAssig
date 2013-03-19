@@ -4,6 +4,6 @@ class CategoriesController < ApplicationController
   end
 
   def list
-    @recipe = Recipe.find_all_by_category_id(params[:id])
+    @recipelist = Recipe.find_all_by_category_id(params[:id])
   end
 end
