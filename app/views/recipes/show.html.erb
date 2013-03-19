@@ -1,11 +1,11 @@
-<dl class="dl-horizontal">
-  <dt>Recipe Name:</dt>
-  <dd><%= @recipe.name %></dd>
-  <dt>Recipe Ingredients:</dt>
-  <dd><%= @recipe.ingredients.html_safe %></dd>
-  <dt>Recipe Description:</dt>
-  <dd><%= @recipe.description.html_safe %></dd>
-</dl>
+
+  Recipe Name:
+  <%= @recipe.name %>
+  Recipe Ingredients:
+  <%= @recipe.ingredients.html_safe %>
+  Recipe Description:
+  <%= @recipe.description.html_safe %>
+
 
 <h3>Comments</h3>
 <% unless @recipe.comments.blank? %>
@@ -15,4 +15,4 @@
 <% end %>
 
 <h3>Add a comment:</h3>
-<%#= render "comments/form" %>
+<%= render "comments/form" %>
