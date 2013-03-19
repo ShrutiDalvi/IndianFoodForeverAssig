@@ -1,2 +1,4 @@
-<h1>Recipies#list</h1>
-<p>Find me in app/views/recipies/list.html.erb</p>
+<h2>Recipies#list</h2>
+<% @list.each do |list| %>
+    <li><%= link_to list.name, :controller => 'recipes', :action => 'show', :id=>list.id %></li>
+<% end %>

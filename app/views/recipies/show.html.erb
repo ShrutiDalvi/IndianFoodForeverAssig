@@ -1,2 +1,18 @@
-<h1>Recipies#show</h1>
-<p>Find me in app/views/recipies/show.html.erb</p>
+<dl class="dl-horizontal">
+  <dt>Recipe Name:</dt>
+  <dd><%= @recipe.name %></dd>
+  <dt>Recipe Ingredients:</dt>
+  <dd><%= @recipe.ingredients.html_safe %></dd>
+  <dt>Recipe Description:</dt>
+  <dd><%= @recipe.description.html_safe %></dd>
+</dl>
+
+<h3>Comments</h3>
+<% unless @recipe.comments.blank? %>
+    <%= render @recipe.comments %>
+<% else %>
+    No comments added!
+<% end %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
